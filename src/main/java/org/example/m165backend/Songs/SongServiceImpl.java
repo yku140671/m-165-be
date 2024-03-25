@@ -32,9 +32,11 @@ public class SongServiceImpl implements SongService {
         Song existingSong = getSongById(id);
         if (existingSong != null) {
             existingSong.setTitle(song.getTitle());
-            existingSong.setArtist(song.getArtist());
             existingSong.setDuration(song.getDuration());
-            // Setze weitere Attribute entsprechend
+            existingSong.setComposer(song.getComposer());
+            existingSong.setProducer(song.getProducer());
+            existingSong.setSpotify_link(song.getSpotify_link());
+            existingSong.setYoutube_link(song.getYoutube_link());
             return songRepository.save(existingSong);
         }
         return null;

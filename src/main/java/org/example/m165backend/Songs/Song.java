@@ -1,5 +1,6 @@
 package org.example.m165backend.Songs;
 
+import org.example.m165backend.Bands.Bands;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -7,6 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Song {
     @Id
     private String id;
+    private Bands band;
     private String title = "";
     private int duration;
     private String composer = "";
@@ -68,5 +70,13 @@ public class Song {
 
     public void setYoutube_link(String youtube_link) {
         this.youtube_link = youtube_link;
+    }
+
+    public Bands getBand() {
+        return band;
+    }
+
+    public void setBand(Bands band) {
+        this.band = band;
     }
 }
